@@ -1,0 +1,50 @@
+{% load bootstrap4 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager - Create Task</title>
+    <link rel="stylesheet" href="{% static 'tasks/styles.css' %}">
+    {% bootstrap_css %}
+    <style>
+        body {
+            background-color: #f8f9fa; /* Set background color */
+        }
+        .container {
+            background-color: #212529; /* Set container background color */
+            color: white; /* Set text color */
+            padding: 20px; /* Add some padding for spacing */
+            border-radius: 10px; /* Optional: Add border-radius for rounded corners */
+            position: relative;
+            top:100px
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center" style="padding-bottom: 50px;">Create New Task</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-floating mb-3">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+                
+            </div>
+            <div class="form-floating mb-3">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="description" placeholder="Description"></textarea>
+                
+            </div>
+            <div class="form-floating mb-3">
+                <label for="due_date">Due Date</label>
+                <input type="date" class="form-control" id="due_date" name="due_date" placeholder="Due Date">
+                
+            </div>
+            <input type="submit" class="btn btn-primary" value="Create Task">
+        </form>
+    </div>
+    {% bootstrap_javascript %}
+</body>
+</html>

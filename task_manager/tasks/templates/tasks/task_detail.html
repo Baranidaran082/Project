@@ -1,0 +1,44 @@
+{% load static %}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager - Task Detail</title>
+    <link rel="stylesheet" href="{% static 'tasks/styles.css' %}">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Set background color */
+        }
+        .container {
+            background-color: #212529; /* Set container background color */ /* Set text color */
+            padding: 20px; /* Add some padding for spacing */
+            border-radius: 10px; /* Optional: Add border-radius for rounded corners */
+            position: relative;
+            top:100px
+        }
+        
+    </style>
+    {% bootstrap_css %}
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-5 mb-4" style="color: #f8f9fa;">Task Detail</h1>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Title</h5>
+                <p class="card-text">{{ task.title }}</p>
+                <h5 class="card-title">Description</h5>
+                <p class="card-text">{{ task.description }}</p>
+                <h5 class="card-title">Due Date</h5>
+                <p class="card-text">{{ task.due_date }}</p>
+                <h5 class="card-title">Status</h5>
+                <p class="card-text">{% if task.completed %}Completed{% else %}Not Completed{% endif %}</p>
+                <a href="{% url 'task_list' %}" class="btn btn-primary">Back to Task List</a>
+            </div>
+        </div>
+    </div>
+    {% bootstrap_javascript %}
+</body>
+</html>

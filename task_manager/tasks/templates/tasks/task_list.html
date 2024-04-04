@@ -1,0 +1,72 @@
+{% load static %}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager - Task List</title>
+    <link rel="stylesheet" href="{% static 'tasks/styles.css' %}">
+    {% bootstrap_css %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <style>
+        /* Center align and font style */
+        body > h1{ 
+            font-family: "EB Garamond", serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 80px
+            
+        }
+
+        body{
+            text-align: center;
+        }
+        h1 {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            
+        }
+        /* Add task button position */
+        .add-task-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TASKMASTER</h1>
+    <table class="table table-dark table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Due Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+            <tr>
+                <td>{{ task.title }}</td>
+                <td>{{ task.description }}</td>
+                <td>{{ task.due_date }}</td>
+                <td>{% if task.completed %}Completed{% else %}Not Completed{% endif %}</td>
+                <td>
+                    <a href="{% url 'task_detail' task.pk %}">View</a> |
+                    <a href="{% url 'task_update' task.pk %}">Edit</a> |
+                    <a href="{% url 'task_delete' task.pk %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'task_create' %}" class="btn btn-primary">Add New Task</a>
+    {% bootstrap_javascript %}
+</body>
+</html>

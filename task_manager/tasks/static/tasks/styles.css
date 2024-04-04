@@ -1,0 +1,14 @@
+body {
+    font-family: 'Arial', sans-serif; /* Change the font to your desired font */
+    text-align: center;
+    font-size: xx-large;
+}
+h1 {
+    padding-bottom: 50px;
+}
+/* Add task button position */
+.add-task-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}

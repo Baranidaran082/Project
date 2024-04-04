@@ -1,0 +1,41 @@
+{% load static %}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager - Delete Task</title>
+    <link rel="stylesheet" href="{% static 'tasks/styles.css' %}">
+    {% bootstrap_css %}
+    <style>
+        body {
+            background-color: white; /* Set background color */
+            color: white; /* Set text color */
+            position: relative;
+            top: 100px;
+        }
+        .container {
+            background-color: #212529 !important; /* Set container background color */
+            color: white; /* Set text color */
+            padding: 20px; /* Add some padding for spacing */
+            border-radius: 10px; /* Optional: Add border-radius for rounded corners */
+        }
+        .btn {
+            margin-right: 10px; /* Add margin between buttons */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Delete Task</h1>
+        <p class="mb-4">Are you sure you want to delete the task "{{ task.title }}"?</p>
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <a href="{% url 'task_list' %}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+    {% bootstrap_javascript %}
+</body>
+</html>
