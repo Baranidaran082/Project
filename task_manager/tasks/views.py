@@ -19,7 +19,7 @@ def task_detail(request, pk):
 
 def task_create(request):
     if request.method == 'POST':
-        form = TaskForm(request.POST)
+        form = TaskForm(request.POST)    #add the post method
         if form.is_valid():
             form.save()
             return redirect('task_list')  # Redirect to the task list page after creating the task
