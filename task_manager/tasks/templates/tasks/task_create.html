@@ -10,39 +10,69 @@
     {% bootstrap_css %}
     <style>
         body {
-            background-color: #f8f9fa; /* Set background color */
+            background-color: #b6d3f1;
+            font-family: 'Roboto', sans-serif;
         }
         .container {
-            background-color: #212529; /* Set container background color */
-            color: white; /* Set text color */
-            padding: 20px; /* Add some padding for spacing */
-            border-radius: 10px; /* Optional: Add border-radius for rounded corners */
-            position: relative;
-            top:100px
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin: 50px auto;
+            max-width: 500px;
+        }
+        .form-control {
+            background-color: #f2f2f2;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            color: #495057;
+            margin-bottom: 20px;
+        }
+        .form-control:focus {
+            background-color: #e2e6ea;
+            border-color: #007bff;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .btn-primary:focus {
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+        }
+        .title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+            color: #007bff;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="text-center" style="padding-bottom: 50px;">Create New Task</h1>
+        <h1 class="title">Create New Task</h1>
         <form method="POST">
             {% csrf_token %}
-            <div class="form-floating mb-3">
+            <div class="form-group">
                 <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="Title">
-                
+                <input type="text" class="form-control" id="title" name="title" placeholder="Enter task title">
             </div>
-            <div class="form-floating mb-3">
+            <div class="form-group">
                 <label for="description">Description</label>
-                <textarea class="form-control" id="description" name="description" placeholder="Description"></textarea>
-                
+                <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter task description"></textarea>
             </div>
-            <div class="form-floating mb-3">
+            <div class="form-group">
                 <label for="due_date">Due Date</label>
-                <input type="date" class="form-control" id="due_date" name="due_date" placeholder="Due Date">
-                
+                <input type="date" class="form-control" id="due_date" name="due_date">
             </div>
-            <input type="submit" class="btn btn-primary" value="Create Task">
+            <button type="submit" class="btn btn-primary">Create Task</button>
         </form>
     </div>
     {% bootstrap_javascript %}

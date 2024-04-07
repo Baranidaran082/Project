@@ -64,3 +64,9 @@ def task_delete(request, pk):
         return redirect('task_list')  # Redirect to the task list page after deleting the task
     return render(request, 'tasks/task_delete.html', {'task': task})
 
+
+
+def index(request):
+    return render(request, 'tasks/index.html')
+
+

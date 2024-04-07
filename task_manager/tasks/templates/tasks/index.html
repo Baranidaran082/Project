@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Task Master</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Add custom styles here */
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+        }
+        .jumbotron {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 100px 20px;
+            text-align: center;
+            border-radius: 0;
+            margin-bottom: 0;
+        }
+        .btn-primary {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+        .btn-primary:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+        .feature {
+            background-color: #ffffff;
+            padding: 50px;
+            margin-bottom: 50px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+        .feature h2 {
+            color: #007bff;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .feature p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .footer {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 5px 0;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Task Master</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'task_list' %}">Tasks</a>
+            </li>
+            <!-- Add more navigation items as needed -->
+        </ul>
+    </div>
+</nav>
+
+<!-- Welcome Section -->
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to Task Master</h1>
+    <p class="lead">A simple task management application built with Django.</p>
+    <a href="{% url 'task_list' %}" class="btn btn-primary btn-lg">View Tasks</a>
+</div>
+
+<!-- Features Section -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="feature">
+                <h2>Organize Tasks</h2>
+                <p>Keep track of your tasks and organize them efficiently.</p>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="feature">
+                <h2>Set Deadlines</h2>
+                <p>Assign deadlines to your tasks to stay on schedule.</p>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="feature">
+                <h2>Collaborate with Others</h2>
+                <p>Share tasks and collaborate with your team members.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="container">
+        <span>&copy; 2020 Task Master. All rights reserved.</span>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+
+
+</body>
+</html>

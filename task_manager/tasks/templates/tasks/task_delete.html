@@ -10,19 +10,35 @@
     {% bootstrap_css %}
     <style>
         body {
-            background-color: white; /* Set background color */
-            color: white; /* Set text color */
-            position: relative;
-            top: 100px;
+            background-color: #b6d3f1; /* Set background color */
+            font-family: 'Roboto', sans-serif; /* Set font */
         }
         .container {
-            background-color: #212529 !important; /* Set container background color */
-            color: white; /* Set text color */
-            padding: 20px; /* Add some padding for spacing */
+            background-color: #ffffff; /* Set container background color */
+            color: #212529; /* Set text color */
+            padding: 30px; /* Add some padding for spacing */
             border-radius: 10px; /* Optional: Add border-radius for rounded corners */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+            max-width: 500px; /* Limit container width */
+            margin: 50px auto; /* Center container */
         }
-        .btn {
-            margin-right: 10px; /* Add margin between buttons */
+        .btn-danger {
+            background-color: #dc3545; /* Set delete button background color */
+            border-color: #dc3545; /* Set delete button border color */
+            font-weight: bold; /* Make delete button text bold */
+        }
+        .btn-danger:hover {
+            background-color: #c82333; /* Change delete button background color on hover */
+            border-color: #bd2130; /* Change delete button border color on hover */
+        }
+        .btn-secondary {
+            background-color: #6c757d; /* Set cancel button background color */
+            border-color: #6c757d; /* Set cancel button border color */
+            font-weight: bold; /* Make cancel button text bold */
+        }
+        .btn-secondary:hover {
+            background-color: #5a6268; /* Change cancel button background color on hover */
+            border-color: #545b62; /* Change cancel button border color on hover */
         }
     </style>
 </head>
