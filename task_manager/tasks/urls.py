@@ -2,9 +2,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-
-    
-
     # Define URL patterns for tasks
     path('', views.task_list, name='task_list'),
     path('<int:pk>/', views.task_detail, name='task_detail'),
